@@ -8,5 +8,6 @@ resource "aws_instance" "machine" {
 
   tags = {
     Name = var.node_name[count.index]
+    environment = var.environment
   }
 }

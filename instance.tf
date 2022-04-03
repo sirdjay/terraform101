@@ -3,4 +3,5 @@ module "spin_up_machine" {
     instance_count = 0
     modulescripts = ["scripts/apache.sh","scripts/tomcat.sh"]
     node_name = ["apache_web_server","Tomcat App Server"]
+    environment = "dev"
 } 
