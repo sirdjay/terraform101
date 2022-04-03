@@ -1,6 +1,6 @@
-resource "aws_instance" "machine" {
-  ami           = "ami-0c02fb55956c7d316"
-  instance_type = "t2.micro"
-  count         = "2"
-  key_name      = "awakey"
-}
+module "spin_up_machine" {
+    source = "./mymodules"
+    instance_count = 0
+    modulescripts = ["scripts/apache.sh","scripts/tomcat.sh"]
+    node_name = ["apache_web_server","Tomcat App Server"]
+} 
